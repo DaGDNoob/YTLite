@@ -124,6 +124,14 @@ jobs:
             cd $THEOS/include && git clone --quiet --depth=1 https://github.com/PoomSmart/PSHeader.git
           fi
 
+      - name: Clone youtubelegacy
+        run: |
+          if [ -d "$THEOS/include/YouTubeLegacy" ]; then
+            cd $THEOS/include/YouTubeLegacy && git pull
+          else
+            cd $THEOS/include && git clone --quiet --depth=1 https://github.com/PoomSmart/YouTubeLegacy.git
+          fi
+
       - name: Clone YouPiP
         if: ${{ inputs.enable_youpip }}
         run: git clone --quiet --depth=1 https://github.com/PoomSmart/YouPiP.git
